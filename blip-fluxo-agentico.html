@@ -1,0 +1,662 @@
+<title>Fluxo 100% agêntico</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&display=swap">
+<style>
+@font-face{font-family:"tabler-icons";font-style:normal;font-weight:400;font-display:block;src:url("data:font/woff2;base64,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") format("woff2")}
+.ti{font-family:"tabler-icons"!important;font-weight:400;line-height:1;-webkit-font-smoothing:antialiased;display:inline-block;speak:none;vertical-align:middle}
+.ti-message-2:before{content:"\eaec"}.ti-message-dots:before{content:"\eaee"}.ti-box-multiple:before{content:"\ee17"}.ti-sparkles:before{content:"\f6d7"}.ti-radar:before{content:"\f017"}.ti-file-text:before{content:"\eaa2"}.ti-plug-connected:before{content:"\f00a"}.ti-share:before{content:"\eb21"}.ti-quote:before{content:"\efbe"}.ti-circle-check:before{content:"\ea67"}.ti-arrow-right:before{content:"\ea1f"}.ti-bulb:before{content:"\ea51"}.ti-point-filled:before{content:"\f698"}.ti-point:before{content:"\eb0c"}.ti-shield-lock:before{content:"\ed58"}.ti-id:before{content:"\eac3"}.ti-report-money:before{content:"\eecd"}.ti-brain:before{content:"\f59f"}.ti-lock-check:before{content:"\f926"}.ti-arrows-split:before{content:"\edb5"}.ti-shield-half:before{content:"\f358"}.ti-checks:before{content:"\ebaa"}.ti-robot:before{content:"\f00b"}.ti-user:before{content:"\eb4d"}.ti-arrow-down:before{content:"\ea16"}.ti-headset:before{content:"\eb90"}.ti-route:before{content:"\eb17"}.ti-device-mobile:before{content:"\ea8a"}.ti-pig-money:before{content:"\f38c"}.ti-lock:before{content:"\eae2"}.ti-chevron-right:before{content:"\ea61"}
+
+:root{
+  --cream:#F7F5F0; --paper:#FFFFFF; --paper-2:#FBFAF6;
+  --navy:#00295B; --ink:#151515; --muted:#5a6472; --muted-2:#8a93a3;
+  --blue:#0080FF; --blue-d:#0a4fa0; --blue-soft:#E6F1FF;
+  --green:#6CCB95; --green-d:#1f6d47; --green-soft:#E7F6ED;
+  --violet:#AE8DFE; --violet-d:#5b3fbf; --violet-soft:#F0EBFF;
+  --lime:#DEF74F; --amber:#E8A13a; --amber-soft:#FBEFD8; --amber-d:#8a5a12;
+  --line:rgba(0,41,91,.12); --line-2:rgba(0,41,91,.2);
+  --radius:16px;
+  --font:"Instrument Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream)}
+.wrap{font-family:var(--font);color:var(--ink);background:var(--cream);min-height:100%;padding:0 clamp(16px,4vw,40px);overflow-x:hidden}
+.inner{max-width:1080px;margin:0 auto;padding-block:clamp(24px,4vw,48px);position:relative}
+h1,h2,h3,h4{font-weight:600;color:var(--navy);text-wrap:balance;margin:0}
+p{margin:0;line-height:1.6;color:var(--muted)}
+.eyebrow{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);font-weight:600}
+
+/* header */
+.top{display:flex;align-items:center;gap:14px;margin-bottom:clamp(28px,5vw,48px);flex-wrap:wrap}
+.logo{height:26px;width:auto;display:block}
+.top .div{width:1px;height:22px;background:var(--line-2)}
+.top .unit{font-size:14px;font-weight:600;color:var(--navy)}
+.top .meta{margin-left:auto;font-size:12px;color:var(--muted-2);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+
+/* hero */
+.hero{position:relative;margin-bottom:clamp(40px,6vw,68px)}
+.hero .blob{position:absolute;border-radius:50%;filter:blur(46px);opacity:.5;z-index:0}
+.hero .b1{width:260px;height:260px;background:var(--blue);top:-60px;right:-40px;opacity:.22}
+.hero .b2{width:200px;height:200px;background:var(--violet);top:40px;right:160px;opacity:.18}
+.hero .inner-h{position:relative;z-index:1}
+.hero .ctx{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-size:12.5px;font-weight:500;padding:7px 14px;border-radius:999px;margin-bottom:18px}
+.hero .ctx i{color:var(--lime);font-size:15px}
+.hero h1{font-size:clamp(29px,5vw,50px);line-height:1.05;letter-spacing:-.02em;font-weight:700;margin-bottom:18px}
+.hero h1 .hl{color:var(--blue)}
+.hero p.lead{font-size:clamp(16px,1.9vw,19px);max-width:64ch;color:var(--muted)}
+
+section{margin-bottom:clamp(44px,6vw,72px);position:relative}
+.sec-head{margin-bottom:22px;max-width:70ch}
+.sec-head h2{font-size:clamp(21px,3.2vw,30px);letter-spacing:-.01em;margin:8px 0 10px}
+.sec-head p{font-size:15.5px}
+
+/* PHONE MOCKUP */
+.stage{display:grid;grid-template-columns:340px 1fr;gap:36px;align-items:start}
+.phone-col{display:flex;flex-direction:column;align-items:center;gap:14px}
+.phone{width:100%;max-width:330px;aspect-ratio:330/670;background:#0b1220;border-radius:38px;padding:11px;box-shadow:0 24px 60px rgba(0,41,91,.22),0 4px 12px rgba(0,41,91,.12);position:relative;display:flex}
+.screen{flex:1;border-radius:28px;overflow:hidden;background:#EDEAE3;display:flex;flex-direction:column;min-height:0;position:relative}
+.notch{position:absolute;top:0;left:50%;transform:translateX(-50%);width:120px;height:22px;background:#0b1220;border-bottom-left-radius:12px;border-bottom-right-radius:12px;z-index:5}
+.p-top{flex:none;background:var(--navy);color:#fff;padding:26px 14px 12px;display:flex;align-items:center;gap:10px}
+.p-avatar{width:34px;height:34px;border-radius:50%;background:var(--blue);display:grid;place-items:center;color:#fff;font-size:18px;flex:none}
+.p-top .nm{font-size:14px;font-weight:600;line-height:1.2}
+.p-top .st{font-size:11px;color:#9fc2ec;display:flex;align-items:center;gap:5px}
+.p-top .st::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green)}
+.p-msgs{flex:1;min-height:0;overflow-y:auto;padding:14px 12px 8px;display:flex;flex-direction:column;gap:8px;scroll-behavior:smooth;background:#EDEAE3}
+.p-msgs::-webkit-scrollbar{width:0}
+.row{display:flex;max-width:100%}
+.row.a{justify-content:flex-start}
+.row.u{justify-content:flex-end}
+.bub{max-width:82%;padding:8px 11px;border-radius:14px;font-size:12.8px;line-height:1.45;color:var(--ink);box-shadow:0 1px 1px rgba(0,0,0,.06)}
+.bub.a{background:#fff;border-top-left-radius:4px}
+.bub.u{background:var(--blue);color:#fff;border-top-right-radius:4px}
+.bub b{font-weight:600}
+.bub .tm{display:block;font-size:9.5px;color:var(--muted-2);text-align:right;margin-top:3px}
+.bub.u .tm{color:#cfe4ff}
+.bub.u .tm i{font-size:12px;vertical-align:-1px}
+.bub.card{border:1px solid var(--line);background:var(--paper-2)}
+.bub.card .lbl{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);font-weight:600;margin-bottom:3px}
+.bub.card .big{font-size:15px;font-weight:700;color:var(--navy)}
+.bub.summary{background:var(--green-soft);border:1px solid rgba(31,109,71,.25)}
+.bub.summary .stitle{font-weight:700;color:var(--green-d);margin-bottom:4px}
+.bub.summary .lni{display:flex;justify-content:space-between;gap:10px;font-size:12px;padding:2px 0}
+.bub.summary .lni span:last-child{font-weight:600;color:var(--ink)}
+.qr{display:flex;flex-wrap:wrap;gap:5px;margin-top:5px}
+.qr .chip{font-size:11.5px;color:var(--blue);background:#fff;border:1px solid rgba(0,128,255,.4);border-radius:999px;padding:5px 10px;font-weight:500}
+.sys{align-self:center;font-size:10.5px;color:var(--muted);background:rgba(0,41,91,.06);border-radius:999px;padding:4px 11px;display:flex;align-items:center;gap:5px}
+.sys i{color:var(--violet-d)}
+.p-input{flex:none;background:#fff;border-top:1px solid var(--line);padding:9px 12px;display:flex;align-items:center;gap:8px}
+.p-input .fake{flex:1;background:#EDEAE3;border-radius:999px;padding:8px 12px;font-size:12px;color:var(--muted-2)}
+.p-input .snd{width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:15px;flex:none}
+.play{display:flex;gap:8px}
+.play button{font-family:var(--font);font-size:13px;font-weight:500;border-radius:999px;padding:8px 15px;cursor:pointer;border:1px solid var(--line-2);background:var(--paper);color:var(--navy);display:flex;align-items:center;gap:7px;transition:.15s}
+.play button:hover{border-color:var(--blue);color:var(--blue)}
+.play button.pri{background:var(--navy);color:#fff;border-color:var(--navy)}
+.play button.pri:hover{background:var(--blue);border-color:var(--blue);color:#fff}
+
+.stage-note{display:flex;flex-direction:column;gap:14px}
+.jbeat{display:flex;gap:13px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 17px}
+.jbeat .ic{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;font-size:19px;flex:none}
+.jbeat.det .ic{background:var(--amber-soft);color:var(--amber-d)}
+.jbeat.ag .ic{background:var(--blue-soft);color:var(--blue-d)}
+.jbeat.gate .ic{background:var(--green-soft);color:var(--green-d)}
+.jbeat.exit .ic{background:var(--violet-soft);color:var(--violet-d)}
+.jbeat h4{font-size:15px;margin-bottom:3px}
+.jbeat p{font-size:13.5px}
+.jbeat .tagline{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;margin-top:6px;display:inline-block}
+.jbeat.det .tagline{color:var(--amber-d)}
+.jbeat.ag .tagline{color:var(--blue-d)}
+.jbeat.gate .tagline{color:var(--green-d)}
+
+/* comparison */
+.cmp{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.col{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.col.old{border-color:rgba(232,161,58,.4)}
+.col.new{border-color:rgba(0,128,255,.4)}
+.col .tag{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;padding:5px 11px;border-radius:999px;margin-bottom:15px}
+.tag.old{background:var(--amber-soft);color:var(--amber-d)}
+.tag.new{background:var(--blue-soft);color:var(--blue-d)}
+.col h3{font-size:17px;margin-bottom:5px}
+.col .sub{font-size:13px;color:var(--muted-2);margin-bottom:16px}
+.flist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:11px}
+.flist li{display:flex;gap:10px;font-size:14px;line-height:1.5;color:var(--muted)}
+.flist li i{flex:none;margin-top:3px;font-size:9px}
+.col.new .flist li i{color:var(--blue)}
+.col.old .flist li i{color:var(--amber)}
+.mini{margin-top:18px;padding-top:15px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted-2)}
+.mini b{color:var(--navy);font-weight:600}
+.schema{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:15px}
+.cx{border:1px solid rgba(232,161,58,.5);background:var(--amber-soft);border-radius:7px;padding:6px 9px;font-size:11px;color:var(--amber-d);font-weight:500}
+.promptbox{background:var(--navy);border-radius:10px;padding:13px 14px;font-size:11.5px;line-height:1.7;color:#cdd9ec;font-family:var(--font)}
+.promptbox .k{color:var(--lime)}
+.promptbox .r{color:#ffc98a}
+.promptbox .t{color:#8fd6b0}
+
+/* hybrid diagram */
+.diagram-wrap{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(14px,2.5vw,22px)}
+.diagram-scroll{overflow-x:auto}
+.diagram-scroll svg{display:block;min-width:760px}
+.dlegend{display:flex;gap:16px;flex-wrap:wrap;margin-top:14px;font-size:12.5px;color:var(--muted)}
+.dlegend span{display:inline-flex;align-items:center;gap:7px}
+.dlegend .sw{width:13px;height:13px;border-radius:4px;flex:none}
+.d-title{font-size:13.5px;font-weight:600;fill:var(--navy)}
+.d-btitle{font-size:13px;font-weight:600}
+.d-bsub{font-size:10.5px}
+.d-zone{font-size:11px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+.d-note{font-size:11px;font-style:italic}
+
+/* tabs */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.tab{font-family:var(--font);font-size:13.5px;font-weight:500;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:10px 15px;cursor:pointer;display:flex;align-items:center;gap:8px;transition:.15s}
+.tab:hover{border-color:var(--line-2);color:var(--navy)}
+.tab[aria-selected="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.tab[aria-selected="true"] i{color:var(--lime)}
+.tab i{font-size:16px}
+.panel-wrap{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,30px)}
+.panel[hidden]{display:none}
+.panel h3{font-size:19px;margin-bottom:9px}
+.panel .q{font-size:13px;color:var(--amber-d);background:var(--amber-soft);border-radius:8px;padding:8px 12px;margin-bottom:18px;display:inline-flex;gap:8px;align-items:baseline}
+.panel .q i{flex:none}
+.panel .body{display:grid;grid-template-columns:1.15fr .85fr;gap:26px}
+.panel .body p{font-size:14.5px;margin-bottom:13px}
+.panel .body p:last-child{margin-bottom:0}
+.panel .body strong{color:var(--navy);font-weight:600}
+.aside{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:16px}
+.aside .lbl{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted-2);margin-bottom:12px;font-weight:600}
+.aside .code{font-size:12px;line-height:1.75;color:var(--navy)}
+.aside .code .k{color:var(--blue);font-weight:600}
+.aside .code .t{color:var(--green-d)}
+.aside .code .c{color:var(--muted-2)}
+.aside .evt{display:flex;align-items:center;gap:9px;font-size:12.5px;color:var(--muted);padding:7px 0;border-bottom:1px solid var(--line)}
+.aside .evt:last-child{border:0}
+.aside .evt i{color:var(--green-d);font-size:15px;flex:none}
+.tt{font-weight:600;color:var(--blue-d)}
+
+/* state map */
+.flow{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(16px,2.5vw,24px)}
+.rail{display:flex;gap:8px;overflow-x:auto;padding-bottom:10px}
+.node{flex:none;min-width:120px;font-family:var(--font);text-align:left;cursor:pointer;background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:12px 13px;transition:.15s;color:var(--navy)}
+.node:hover{border-color:var(--line-2);transform:translateY(-2px)}
+.node[aria-selected="true"]{border-color:var(--blue);background:var(--blue-soft)}
+.node.gate[aria-selected="true"]{border-color:var(--green-d);background:var(--green-soft)}
+.node .n{font-size:11px;color:var(--muted-2);margin-bottom:5px;display:flex;align-items:center;gap:5px}
+.node .nm{font-size:13.5px;font-weight:600;line-height:1.25}
+.node .badge{font-size:10px;margin-top:7px;display:inline-block;padding:2px 7px;border-radius:5px;font-weight:600}
+.badge.intent{background:var(--blue-soft);color:var(--blue-d)}
+.badge.gate{background:var(--green-soft);color:var(--green-d)}
+.badge.exit{background:var(--violet-soft);color:var(--violet-d)}
+.detail{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.dcard{background:var(--paper-2);border:1px solid var(--line);border-radius:12px;padding:15px 16px}
+.dcard .h{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted-2);margin-bottom:11px;display:flex;align-items:center;gap:7px;font-weight:600}
+.dcard .h i{font-size:15px}
+.dcard.rules .h i{color:var(--amber-d)}
+.dcard.tools .h i{color:var(--blue)}
+.dcard.track .h i{color:var(--green-d)}
+.dcard.says .h i{color:var(--violet-d)}
+.dcard ul{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.dcard li{font-size:13px;line-height:1.45;color:var(--muted);display:flex;gap:8px}
+.dcard li i{flex:none;margin-top:4px;font-size:8px;color:var(--muted-2)}
+.dcard .says-txt{font-size:13.5px;color:var(--ink);line-height:1.55;font-style:italic}
+.dcard .tt{font-weight:600;color:var(--green-d)}
+
+/* steps + callout */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.step .num{width:30px;height:30px;border-radius:9px;background:var(--navy);color:#fff;display:grid;place-items:center;font-weight:700;font-size:14px;margin-bottom:13px}
+.step h3{font-size:15.5px;margin-bottom:7px}
+.step p{font-size:13.5px}
+.callout{margin-top:24px;background:var(--navy);border-radius:var(--radius);padding:22px 24px;display:flex;gap:16px;align-items:flex-start}
+.callout i{font-size:22px;color:var(--lime);flex:none;margin-top:2px}
+.callout p{font-size:14.5px;color:#dbe6f5}
+.callout b{color:#fff;font-weight:600}
+footer{border-top:1px solid var(--line);padding-top:20px;font-size:12.5px;color:var(--muted-2);display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+
+@media (max-width:820px){
+  .stage{grid-template-columns:1fr;gap:24px}
+  .phone-col{max-width:330px;margin:0 auto}
+}
+@media (max-width:680px){
+  .cmp{grid-template-columns:1fr}
+  .panel .body{grid-template-columns:1fr}
+  .detail{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+<div class="inner">
+
+  <div class="top">
+    <img class="logo" alt="blip" src="data:image/png;base64,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">
+    <span class="div"></span>
+    <span class="unit">Value Design</span>
+    <span class="meta">Material técnico-comercial</span>
+  </div>
+
+  <header class="hero">
+    <div class="blob b1"></div><div class="blob b2"></div>
+    <div class="inner-h">
+      <div class="ctx"><i class="ti ti-robot"></i> Contexto: agente de renegociação de dívidas</div>
+      <h1>Você não desenha mais o caminho.<br><span class="hl">Você define o que o agente pode fazer.</span></h1>
+      <p class="lead">No Studio clássico, o fluxo <em>é</em> a lógica: cada caixinha é um estado e cada seta uma rota fixa que você precisa prever. No modelo 100% agêntico, o prompt define objetivo, regras e ferramentas — e o modelo escolhe o caminho em tempo real. Antes de entrar na parte técnica, veja a jornada acontecendo.</p>
+    </div>
+  </header>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">A jornada, na prática</div>
+      <h2>O que o cliente vê</h2>
+      <p>Uma renegociação inteira conduzida por um único agente conversacional. Role as mensagens no aparelho, ou toque em reproduzir para acompanhar do início ao fim.</p>
+    </div>
+    <div class="stage">
+      <div class="phone-col">
+        <div class="phone">
+          <div class="screen">
+            <div class="notch"></div>
+            <div class="p-top">
+              <div class="p-avatar"><i class="ti ti-robot"></i></div>
+              <div>
+                <div class="nm">Assistente de renegociação</div>
+                <div class="st">online agora</div>
+              </div>
+            </div>
+            <div class="p-msgs" id="pmsgs">
+              <div class="row a"><div class="bub a">Oi, Marina. Sou o assistente de renegociação e estou aqui para ajudar com seus débitos em aberto.<span class="tm">09:41</span></div></div>
+              <div class="row a"><div class="bub a">Ao seguir com a conversa, você concorda com nossa <b>política de privacidade</b>.<div class="qr"><span class="chip">Ver termos</span></div><span class="tm">09:41</span></div></div>
+              <div class="row a"><div class="bub a">Podemos continuar com o CPF <b>107.•••.•••-36</b>?<div class="qr"><span class="chip">Sim, continuar</span><span class="chip">Outro CPF</span></div><span class="tm">09:41</span></div></div>
+              <div class="row u"><div class="bub u">Sim, continuar<span class="tm">09:42 <i class="ti ti-checks"></i></span></div></div>
+              <div class="row a"><div class="bub a">Perfeito. Qual a sua <b>data de nascimento</b>?<span class="tm">09:42</span></div></div>
+              <div class="row u"><div class="bub u">17/09/1997<span class="tm">09:42 <i class="ti ti-checks"></i></span></div></div>
+              <div class="row a"><div class="bub a">Analisei suas informações e encontrei oportunidades de regularização.<span class="tm">09:42</span></div></div>
+              <div class="row a"><div class="bub a card"><div class="lbl">Débito encontrado</div><div class="big">R$ 8.754,35</div>Cartão de crédito · 93 dias em atraso<span class="tm">09:42</span></div></div>
+              <div class="row a"><div class="bub a">À vista no PIX você tem <b>5% de desconto</b>: R$ 8.316,63.<div class="qr"><span class="chip">À vista no PIX</span><span class="chip">À vista no boleto</span><span class="chip">Contra-proposta</span></div><span class="tm">09:43</span></div></div>
+              <div class="row u"><div class="bub u">Quero parcelar<span class="tm">09:43 <i class="ti ti-checks"></i></span></div></div>
+              <div class="row a"><div class="bub a">Posso dividir em <b>3x sem juros</b>: 3 × R$ 2.918,12 (valor cheio).<div class="qr"><span class="chip">Aceitar 3x</span><span class="chip">Outras parcelas</span></div><span class="tm">09:43</span></div></div>
+              <div class="row u"><div class="bub u">Aceitar 3x<span class="tm">09:44 <i class="ti ti-checks"></i></span></div></div>
+              <div class="row a"><div class="bub a summary"><div class="stitle">Resumo do acordo</div><div class="lni"><span>Dívida</span><span>Cartão de crédito</span></div><div class="lni"><span>Valor</span><span>R$ 8.754,35</span></div><div class="lni"><span>Forma</span><span>3x sem juros</span></div><div class="lni"><span>Válido</span><span>hoje</span></div><div class="qr"><span class="chip">Confirmar acordo</span><span class="chip">Ajustar</span><span class="chip">Cancelar</span></div><span class="tm">09:44</span></div></div>
+              <div class="row u"><div class="bub u">Confirmar acordo<span class="tm">09:44 <i class="ti ti-checks"></i></span></div></div>
+              <div class="row a"><div class="bub a">Tudo certo, Marina. Vou gerar seu pagamento agora.<span class="tm">09:44</span></div></div>
+              <div class="sys"><i class="ti ti-arrows-split"></i> handoff → pagamento</div>
+            </div>
+            <div class="p-input">
+              <div class="fake">Mensagem</div>
+              <div class="snd"><i class="ti ti-arrow-right"></i></div>
+            </div>
+          </div>
+        </div>
+        <div class="play">
+          <button class="pri" id="btnPlay"><i class="ti ti-arrow-down"></i> Reproduzir jornada</button>
+          <button id="btnReset">Reiniciar</button>
+        </div>
+      </div>
+      <div class="stage-note">
+        <div class="jbeat det"><div class="ic"><i class="ti ti-shield-lock"></i></div><div><h4>Abertura e verificação</h4><p>Saudação sem repetição, aviso de privacidade e checagem de identidade. Etapas que não mudam.</p><span class="tagline">Determinístico</span></div></div>
+        <div class="jbeat ag"><div class="ic"><i class="ti ti-brain"></i></div><div><h4>Negociação</h4><p>O cliente pediu parcelamento em texto livre. O agente entendeu a intenção e ofereceu 3x sem juros, seguindo as regras do prompt.</p><span class="tagline">Agêntico</span></div></div>
+        <div class="jbeat gate"><div class="ic"><i class="ti ti-lock-check"></i></div><div><h4>Resumo obrigatório</h4><p>Antes de gerar o pagamento, o agente sempre apresenta o resumo para o cliente confirmar. É um gate que não pode ser pulado.</p><span class="tagline">Gate</span></div></div>
+        <div class="jbeat exit"><div class="ic"><i class="ti ti-arrows-split"></i></div><div><h4>Handoff</h4><p>Confirmado o acordo, o agente encaminha para o fluxo de pagamento, levando o contexto junto.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">O que muda</div>
+      <h2>Dois jeitos de construir a mesma jornada</h2>
+      <p>Mesma renegociação. À esquerda, o modelo de blocos de 2021. À direita, o agêntico.</p>
+    </div>
+    <div class="cmp">
+      <div class="col old">
+        <span class="tag old"><i class="ti ti-box-multiple"></i> Studio determinístico · 2021</span>
+        <div class="schema" aria-hidden="true">
+          <span class="cx">Menu</span><span class="cx">Valida CPF</span><span class="cx">Condição</span><span class="cx">Parcelar?</span><span class="cx">Gera pgto</span>
+        </div>
+        <h3>O fluxo é a lógica</h3>
+        <div class="sub">Cada aresta é uma rota fixa que você precisa antecipar.</div>
+        <ul class="flist">
+          <li><i class="ti ti-point-filled"></i> Cada intenção nova é mais caixinha e mais botão.</li>
+          <li><i class="ti ti-point-filled"></i> Texto livre e áudio quebram o fluxo.</li>
+          <li><i class="ti ti-point-filled"></i> Tracking é "por qual bloco passou".</li>
+          <li><i class="ti ti-point-filled"></i> Previsível, mas explode em complexidade.</li>
+        </ul>
+        <div class="mini">Bom para processos <b>rígidos e curtos</b>. Ruim para conversa aberta.</div>
+      </div>
+      <div class="col new">
+        <span class="tag new"><i class="ti ti-sparkles"></i> Fluxo 100% agêntico</span>
+        <div class="promptbox" aria-hidden="true"><span class="k">objetivo:</span> priorizar à vista PIX (-5%)<br><span class="r">regra:</span> só oferecer parcelado se pedir<br><span class="r">regra:</span> resumo obrigatório antes do pgto<br><span class="t">tools:</span> calcularCondicoes · gerarPgto · handoff</div>
+        <h3>O prompt define as regras</h3>
+        <div class="sub">O modelo navega dentro dos limites e chama ferramentas.</div>
+        <ul class="flist">
+          <li><i class="ti ti-point-filled"></i> Nova intenção é ajustar o prompt, não redesenhar.</li>
+          <li><i class="ti ti-point-filled"></i> Entende texto livre e áudio nativamente.</li>
+          <li><i class="ti ti-point-filled"></i> Tracking são eventos, decisões e tools por turno.</li>
+          <li><i class="ti ti-point-filled"></i> Flexível, com guardrails no lugar das arestas.</li>
+        </ul>
+        <div class="mini">Bom para <b>conversa real</b> com regras de negócio fortes.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">A arquitetura</div>
+      <h2>Determinístico + agêntico no mesmo fluxo</h2>
+      <p>Não é oito ou oitenta. O começo, onde a régua é fixa, continua determinístico. O miolo da negociação vira agêntico. E o roteamento entre os blocos leva o cliente ao destino certo.</p>
+    </div>
+    <div class="diagram-wrap">
+      <div class="diagram-scroll">
+        <svg viewBox="0 0 980 400" role="img" aria-labelledby="dgt dgd" width="100%">
+          <title id="dgt">Fluxo híbrido determinístico e agêntico</title>
+          <desc id="dgd">Passos fixos de abertura e verificação levam a um agente que decide entre intenções de negociação, passam por um resumo obrigatório e são roteados para os handoffs de pagamento, humano e aplicativos.</desc>
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+          </defs>
+
+          <rect x="20" y="60" width="352" height="124" rx="14" fill="none" stroke="#E8A13a" stroke-width="1" stroke-dasharray="5 5"/>
+          <text class="d-zone" x="34" y="52" fill="#8a5a12">Determinístico · passos fixos</text>
+          <rect x="392" y="60" width="256" height="272" rx="14" fill="none" stroke="#0080FF" stroke-width="1" stroke-dasharray="5 5"/>
+          <text class="d-zone" x="406" y="52" fill="#0a4fa0">Agêntico · o modelo decide</text>
+
+          <g>
+            <rect x="36" y="90" width="150" height="60" rx="11" fill="#FBEFD8" stroke="#E8A13a" stroke-width="0.75"/>
+            <text class="d-btitle" x="111" y="115" text-anchor="middle" fill="#8a5a12">Mensagem ativa</text>
+            <text class="d-bsub" x="111" y="132" text-anchor="middle" fill="#a06a1e">entrada da jornada</text>
+          </g>
+          <line x1="186" y1="120" x2="204" y2="120" stroke="#b98a3a" stroke-width="1.4" marker-end="url(#ar)"/>
+          <g>
+            <rect x="206" y="90" width="150" height="60" rx="11" fill="#FBEFD8" stroke="#E8A13a" stroke-width="0.75"/>
+            <text class="d-btitle" x="281" y="115" text-anchor="middle" fill="#8a5a12">Verificação</text>
+            <text class="d-bsub" x="281" y="132" text-anchor="middle" fill="#a06a1e">CPF + nascimento</text>
+          </g>
+          <line x1="356" y1="120" x2="406" y2="120" stroke="#7d8898" stroke-width="1.4" marker-end="url(#ar)"/>
+
+          <g>
+            <rect x="408" y="82" width="222" height="76" rx="13" fill="#0080FF"/>
+            <text x="519" y="110" text-anchor="middle" fill="#fff" style="font-size:14.5px;font-weight:700">Agente de negociação</text>
+            <text x="519" y="132" text-anchor="middle" fill="#cfe6ff" style="font-size:11.5px">decide em runtime (LLM)</text>
+          </g>
+
+          <line x1="470" y1="158" x2="452" y2="204" stroke="#0080FF" stroke-width="1.4" marker-end="url(#ar)"/>
+          <line x1="519" y1="158" x2="519" y2="204" stroke="#0080FF" stroke-width="1.4" marker-end="url(#ar)"/>
+          <line x1="568" y1="158" x2="586" y2="204" stroke="#0080FF" stroke-width="1.4" marker-end="url(#ar)"/>
+
+          <g>
+            <rect x="404" y="206" width="76" height="52" rx="10" fill="#E6F1FF" stroke="#0080FF" stroke-width="0.75"/>
+            <text x="442" y="230" text-anchor="middle" fill="#0a4fa0" style="font-size:12px;font-weight:600">À vista</text>
+            <text x="442" y="245" text-anchor="middle" fill="#3b74b8" style="font-size:9.5px">PIX/boleto</text>
+          </g>
+          <g>
+            <rect x="486" y="206" width="76" height="52" rx="10" fill="#E6F1FF" stroke="#0080FF" stroke-width="0.75"/>
+            <text x="524" y="230" text-anchor="middle" fill="#0a4fa0" style="font-size:12px;font-weight:600">Parcelar</text>
+            <text x="524" y="245" text-anchor="middle" fill="#3b74b8" style="font-size:9.5px">3x → 10x</text>
+          </g>
+          <g>
+            <rect x="568" y="206" width="72" height="52" rx="10" fill="#E6F1FF" stroke="#0080FF" stroke-width="0.75"/>
+            <text x="604" y="230" text-anchor="middle" fill="#0a4fa0" style="font-size:12px;font-weight:600">Mudar</text>
+            <text x="604" y="245" text-anchor="middle" fill="#3b74b8" style="font-size:9.5px">vencimento</text>
+          </g>
+          <text class="d-note" x="519" y="290" text-anchor="middle" fill="#5a6472">o agente transita livremente entre as intenções</text>
+          <text class="d-note" x="519" y="308" text-anchor="middle" fill="#5a6472">respeitando os guardrails do prompt</text>
+
+          <line x1="630" y1="120" x2="690" y2="120" stroke="#7d8898" stroke-width="1.4" marker-end="url(#ar)"/>
+          <g>
+            <rect x="692" y="90" width="146" height="60" rx="11" fill="#E7F6ED" stroke="#1f6d47" stroke-width="0.9"/>
+            <text class="d-btitle" x="765" y="114" text-anchor="middle" fill="#1f6d47">Resumo do acordo</text>
+            <text class="d-bsub" x="765" y="131" text-anchor="middle" fill="#3a8560">gate obrigatório</text>
+          </g>
+
+          <line x1="765" y1="150" x2="765" y2="196" stroke="#00295B" stroke-width="1.4" marker-end="url(#ar)"/>
+          <g>
+            <rect x="690" y="198" width="150" height="52" rx="11" fill="#00295B"/>
+            <text x="765" y="222" text-anchor="middle" fill="#fff" style="font-size:13px;font-weight:600">Roteamento</text>
+            <text x="765" y="238" text-anchor="middle" fill="#9db6d6" style="font-size:10px">encaminha por intenção</text>
+          </g>
+
+          <line x1="720" y1="250" x2="700" y2="300" stroke="#AE8DFE" stroke-width="1.4" marker-end="url(#ar)"/>
+          <line x1="765" y1="250" x2="765" y2="300" stroke="#AE8DFE" stroke-width="1.4" marker-end="url(#ar)"/>
+          <line x1="810" y1="250" x2="830" y2="300" stroke="#AE8DFE" stroke-width="1.4" marker-end="url(#ar)"/>
+          <g>
+            <rect x="636" y="302" width="90" height="46" rx="10" fill="#F0EBFF" stroke="#AE8DFE" stroke-width="0.75"/>
+            <text x="681" y="329" text-anchor="middle" fill="#5b3fbf" style="font-size:11.5px;font-weight:600">Pagamento</text>
+          </g>
+          <g>
+            <rect x="732" y="302" width="70" height="46" rx="10" fill="#F0EBFF" stroke="#AE8DFE" stroke-width="0.75"/>
+            <text x="767" y="329" text-anchor="middle" fill="#5b3fbf" style="font-size:11.5px;font-weight:600">Humano</text>
+          </g>
+          <g>
+            <rect x="808" y="302" width="96" height="46" rx="10" fill="#F0EBFF" stroke="#AE8DFE" stroke-width="0.75"/>
+            <text x="856" y="329" text-anchor="middle" fill="#5b3fbf" style="font-size:11.5px;font-weight:600">Aplicativos</text>
+          </g>
+        </svg>
+      </div>
+      <div class="dlegend">
+        <span><span class="sw" style="background:#FBEFD8;border:1px solid #E8A13a"></span> Determinístico (régua fixa)</span>
+        <span><span class="sw" style="background:#0080FF"></span> Agêntico (LLM decide)</span>
+        <span><span class="sw" style="background:#E7F6ED;border:1px solid #1f6d47"></span> Gate obrigatório</span>
+        <span><span class="sw" style="background:#F0EBFF;border:1px solid #AE8DFE"></span> Handoff / saída</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">As três dúvidas</div>
+      <h2>Sem step by step, como faço tracking, doc e chamada?</h2>
+      <p>Nada disso some — só muda de lugar. Deixa de estar no desenho do fluxo e passa a ser instrumentado por turno.</p>
+    </div>
+    <div class="tabs" role="tablist" aria-label="Dúvidas">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p-track" id="t-track"><i class="ti ti-radar"></i> Tracking</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-doc" id="t-doc"><i class="ti ti-file-text"></i> Documentação</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-call" id="t-call"><i class="ti ti-plug-connected"></i> Chamadas / tools</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-multi" id="t-multi"><i class="ti ti-share"></i> Conexão entre agentes</button>
+    </div>
+    <div class="panel-wrap">
+      <div class="panel" id="p-track" role="tabpanel" aria-labelledby="t-track">
+        <h3>Tracking: de "qual bloco" para "qual decisão"</h3>
+        <div class="q"><i class="ti ti-quote"></i> "Como é que faz tracking se não é mais step by step?"</div>
+        <div class="body">
+          <div>
+            <p>No determinístico você rastreava <strong>por onde a pessoa passou</strong>. No agêntico você rastreia o que aconteceu em cada turno: o input, a <strong>decisão do agente</strong>, quais <strong>tools</strong> ele chamou e com quais parâmetros, e o output.</p>
+            <p>Os eventos de negócio continuam existindo — você os instrumenta como <strong>marcadores/tool calls</strong> ("acordo_confirmado", "handoff_humano"), em vez de depender de "passou pela caixinha X". Mais confiável: o evento dispara quando o fato acontece, não quando um nó é atravessado.</p>
+            <p>Cada execução vira um <strong>trace</strong> com spans (turno → tool → handoff), o que dá replay da sessão e métricas de funil sem amarrar no desenho.</p>
+          </div>
+          <div class="aside">
+            <div class="lbl">Eventos na renegociação</div>
+            <div class="evt"><i class="ti ti-circle-check"></i> consentimento_aceito</div>
+            <div class="evt"><i class="ti ti-circle-check"></i> identidade_verificada</div>
+            <div class="evt"><i class="ti ti-circle-check"></i> condicoes_apresentadas</div>
+            <div class="evt"><i class="ti ti-circle-check"></i> intencao_classificada</div>
+            <div class="evt"><i class="ti ti-circle-check"></i> acordo_confirmado</div>
+            <div class="evt"><i class="ti ti-circle-check"></i> handoff_pagamento</div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" id="p-doc" role="tabpanel" aria-labelledby="t-doc" hidden>
+        <h3>Documentação: o prompt é a fonte da verdade</h3>
+        <div class="q"><i class="ti ti-quote"></i> "Como é que faz documentação disso?"</div>
+        <div class="body">
+          <div>
+            <p>No modelo de blocos, a documentação era o próprio canvas. No agêntico, o <strong>system prompt versionado é a documentação viva</strong> — descreve personalidade, regras de negócio, guardrails e prioridades em linguagem clara.</p>
+            <p>Ao redor dele, três artefatos completam o quadro: o <strong>catálogo de tools</strong> (nome, o que faz, schema de entrada/saída), o <strong>mapa de handoffs</strong> entre agentes, e um <strong>diagrama de intenção</strong> — não de execução — para leitura humana.</p>
+            <p>Versionamento estilo git + changelog do prompt dá rastreabilidade de "o que mudou no comportamento e quando".</p>
+          </div>
+          <div class="aside">
+            <div class="lbl">Camadas de documentação</div>
+            <div class="code">
+              <span class="c"># 1. system prompt</span><br>
+              personalidade · regras · guardrails<br><br>
+              <span class="c"># 2. catálogo de tools</span><br>
+              <span class="k">calcularCondicoes</span>(divida)<br>
+              <span class="k">gerarPagamento</span>(tipo, valor)<br>
+              <span class="k">handoff</span>(destino)<br><br>
+              <span class="c"># 3. mapa de intenção + handoffs</span><br>
+              árvore de navegação (visual)
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" id="p-call" role="tabpanel" aria-labelledby="t-call" hidden>
+        <h3>Chamadas: a caixinha de requisição vira uma tool</h3>
+        <div class="q"><i class="ti ti-quote"></i> "Como é que faz chamada, tipo integração com API?"</div>
+        <div class="body">
+          <div>
+            <p>No Studio, uma chamada de API era um bloco fixo num ponto do fluxo. No agêntico, você <strong>declara a tool</strong> (nome, descrição, parâmetros) e o modelo decide <strong>quando</strong> chamá-la, a partir da intenção do cliente.</p>
+            <p>Você não perde controle: a tool tem contrato e validação, e as regras críticas ficam no prompt <em>e</em> na própria API. O agente orquestra; a lógica sensível continua no backend.</p>
+            <p>Aqui, "gerar pagamento" deixa de ser um nó obrigatório numa rota e passa a ser uma ferramenta chamada só depois do resumo confirmado — o gate amarra isso no prompt.</p>
+          </div>
+          <div class="aside">
+            <div class="lbl">Tool declarada</div>
+            <div class="code">
+              <span class="k">gerarPagamento</span>({<br>
+              &nbsp;&nbsp;tipo: <span class="t">"pix" | "boleto"</span>,<br>
+              &nbsp;&nbsp;parcelas: <span class="t">number</span>,<br>
+              &nbsp;&nbsp;valorFinal: <span class="t">number</span><br>
+              })<br><br>
+              <span class="c">// o modelo chama por intenção,</span><br>
+              <span class="c">// nunca antes do resumo (gate)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel" id="p-multi" role="tabpanel" aria-labelledby="t-multi" hidden>
+        <h3>Conexão entre agentes: orquestrador + especialistas</h3>
+        <div class="q"><i class="ti ti-quote"></i> "Como conecta com os agentes e tal?"</div>
+        <div class="body">
+          <div>
+            <p>Um fluxo 100% agêntico raramente é um único agente gigante. É um <strong>orquestrador</strong> que resolve a conversa e faz <strong>handoff</strong> para agentes especializados quando a intenção sai do seu escopo.</p>
+            <p>Cada agente tem seu próprio prompt e suas próprias tools. O handoff carrega o contexto da sessão, então o cliente não repete informação.</p>
+            <p>Isso mantém cada agente enxuto e auditável, e deixa o tracking limpo: cada handoff é um span com origem, destino e motivo.</p>
+          </div>
+          <div class="aside">
+            <div class="lbl">Handoffs da renegociação</div>
+            <div class="evt"><i class="ti ti-arrow-right"></i> <span>Negociação → <span class="tt">pagamento</span></span></div>
+            <div class="evt"><i class="ti ti-arrow-right"></i> <span>Negociação → <span class="tt">atendimento humano</span></span></div>
+            <div class="evt"><i class="ti ti-arrow-right"></i> <span>Negociação → <span class="tt">aplicativos</span></span></div>
+            <div class="evt"><i class="ti ti-arrow-right"></i> <span>contexto da sessão vai junto</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Exemplo vivo · árvore de navegação</div>
+      <h2>Estado por estado, o que o agente rastreia</h2>
+      <p>Clique em cada estado para ver as regras que o restringem, as tools que ele pode chamar e o que fica registrado no tracking. Guardrails e eventos substituem as arestas fixas.</p>
+    </div>
+    <div class="flow">
+      <div class="rail" role="tablist" aria-label="Estados do agente" id="rail"></div>
+      <div class="detail" id="detail"></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <div class="eyebrow">Como começar</div>
+      <h2>Um caminho de transição, sem big bang</h2>
+      <p>Você não precisa migrar tudo de uma vez. Dá para testar o agêntico onde ele rende mais e manter blocos onde o determinismo ainda faz sentido.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>Escolha uma jornada aberta</h3><p>Renegociação, dúvidas, atendimento — casos com conversa real e muitas variações são onde o determinístico mais sofre e o agêntico mais brilha.</p></div>
+      <div class="step"><div class="num">2</div><h3>Escreva o prompt como regra, não como rota</h3><p>Objetivo, guardrails e prioridades. Declare as tools que ele pode chamar. Personalidade, regras de negócio e passos entram como estados.</p></div>
+      <div class="step"><div class="num">3</div><h3>Instrumente e observe</h3><p>Eventos de negócio como marcadores, traces por turno, replay de sessão. Ajuste o prompt com base no que o tracking mostra — ciclo curto.</p></div>
+    </div>
+    <div class="callout">
+      <i class="ti ti-bulb" aria-hidden="true"></i>
+      <p><b>Para depois do novo contrato:</b> um bom primeiro piloto é pegar um fluxo hoje 100% em caixinhas, reconstruir só ele como agente com 3–4 tools e handoffs, e rodar em paralelo. Você compara determinístico vs agêntico com dados reais antes de escalar.</p>
+    </div>
+  </section>
+
+  <footer>
+    <span>Blip · Value Design — material de apoio técnico-comercial</span>
+    <span>Exemplo ilustrativo · agente de renegociação de dívidas (ambiente demo)</span>
+  </footer>
+
+</div>
+</div>
+
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tab'));
+  function selTab(t){tabs.forEach(function(x){var on=x===t;x.setAttribute('aria-selected',on?'true':'false');document.getElementById(x.getAttribute('aria-controls')).hidden=!on;});}
+  tabs.forEach(function(t){t.addEventListener('click',function(){selTab(t);});});
+
+  var states=[
+    {n:'Passo 1',nm:'Entrada',type:'',icon:'ti-message-2',
+      rules:['Vem de mensagem ativa','Não repetir saudação'],
+      tools:['contexto injetado: {{nome}}, {{dados}}'],
+      track:['sessao_iniciada','origem = mensagem_ativa'],
+      says:'Oi, Marina. Estou aqui para ajudar com seus débitos em aberto.'},
+    {n:'Passo 2',nm:'Privacidade',type:'',icon:'ti-shield-lock',
+      rules:['Aceite antes de prosseguir','Enviar link dos termos'],
+      tools:['—'],
+      track:['consentimento_aceito'],
+      says:'Ao seguir, você concorda com nossa política de privacidade.'},
+    {n:'Passo 3–4',nm:'Verificação',type:'',icon:'ti-id',
+      rules:['Mascarar CPF (107.•••.•••-36)','Confirmar data de nascimento','Demo: não valida de fato'],
+      tools:['verificarIdentidade(cpf, nascimento)'],
+      track:['identidade_verificada'],
+      says:'Podemos continuar com o CPF 107.•••.•••-36?'},
+    {n:'Passo 5',nm:'Apresenta condições',type:'',icon:'ti-report-money',
+      rules:['Só à vista primeiro','Desconto máx. 5% — só PIX/boleto à vista','Explicar que é calculado por atraso'],
+      tools:['calcularCondicoes(divida)'],
+      track:['condicoes_apresentadas','valor, produto, dias_atraso'],
+      says:'À vista no PIX você tem 5% de desconto. Quer ver as condições?'},
+    {n:'Passo 5b',nm:'Contra-proposta',type:'intent',icon:'ti-brain',
+      rules:['3x sem juros — só se pedir','Até 10x c/ juros 1,8% a.m. — só se insistir','Mudar data: até 3 anos','Negociar valor: não por este canal'],
+      tools:['calcularParcelamento(valor, n)','simularNovaData(data)'],
+      track:['intencao_classificada = parcelar | mudar_data | negociar'],
+      says:'Como você prefere seguir? (entende texto ou áudio livre)'},
+    {n:'Passo 7',nm:'Resumo do acordo',type:'gate',icon:'ti-lock-check',
+      rules:['OBRIGATÓRIO — nunca pular','Mostrar valor, desconto e valor final','"Ajustar" volta às condições'],
+      tools:['—'],
+      track:['resumo_exibido','acordo_confirmado'],
+      says:'Está tudo certo para continuar? Confirmar | Ajustar | Cancelar'},
+    {n:'Passo 8',nm:'Handoff',type:'exit',icon:'ti-arrows-split',
+      rules:['Só após o resumo confirmado','Roteia por intenção'],
+      tools:['handoff("pagamento" | "humano" | "aplicativos")'],
+      track:['handoff_acionado','destino'],
+      says:'Vou te direcionar para concluir o pagamento.'}
+  ];
+  var rail=document.getElementById('rail'), detail=document.getElementById('detail');
+  var badgeMap={intent:['badge intent','por intenção'],gate:['badge gate','gate obrigatório'],exit:['badge exit','saída']};
+  states.forEach(function(s,i){
+    var b=document.createElement('button');
+    b.className='node'+(s.type==='gate'?' gate':'');
+    b.setAttribute('role','tab');
+    b.setAttribute('aria-selected',i===0?'true':'false');
+    var badge=s.type&&badgeMap[s.type]?'<span class="'+badgeMap[s.type][0]+'">'+badgeMap[s.type][1]+'</span>':'';
+    b.innerHTML='<div class="n"><i class="ti '+s.icon+'"></i> '+s.n+'</div><div class="nm">'+s.nm+'</div>'+badge;
+    b.addEventListener('click',function(){[].slice.call(rail.children).forEach(function(c){c.setAttribute('aria-selected','false');});b.setAttribute('aria-selected','true');render(s);});
+    rail.appendChild(b);
+  });
+  function list(arr){return arr.map(function(x){return '<li><i class="ti ti-point-filled"></i>'+x+'</li>';}).join('');}
+  function render(s){
+    detail.innerHTML=
+      '<div class="dcard rules"><div class="h"><i class="ti ti-shield-half"></i> Regras / guardrails</div><ul>'+list(s.rules)+'</ul></div>'+
+      '<div class="dcard tools"><div class="h"><i class="ti ti-plug-connected"></i> Tools que pode chamar</div><ul>'+list(s.tools)+'</ul></div>'+
+      '<div class="dcard track"><div class="h"><i class="ti ti-radar"></i> Fica no tracking</div><ul>'+list(s.track)+'</ul></div>'+
+      '<div class="dcard says"><div class="h"><i class="ti ti-message-dots"></i> O agente diz algo como</div><div class="says-txt">"'+s.says+'"</div></div>';
+  }
+  render(states[0]);
+
+  var msgs=document.getElementById('pmsgs'), btnPlay=document.getElementById('btnPlay'), btnReset=document.getElementById('btnReset');
+  var anim=null;
+  function stop(){if(anim){cancelAnimationFrame(anim);anim=null;}}
+  btnReset.addEventListener('click',function(){stop();msgs.scrollTo({top:0,behavior:'smooth'});});
+  btnPlay.addEventListener('click',function(){
+    stop();
+    var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var target=msgs.scrollHeight-msgs.clientHeight;
+    if(reduce){msgs.scrollTop=target;return;}
+    msgs.scrollTop=0;
+    var start=null,dur=Math.max(6000,target*14);
+    function step(ts){
+      if(start===null)start=ts;
+      var p=Math.min(1,(ts-start)/dur);
+      var e=p<0.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+      msgs.scrollTop=target*e;
+      if(p<1)anim=requestAnimationFrame(step); else anim=null;
+    }
+    anim=requestAnimationFrame(step);
+  });
+})();
+</script>
